@@ -4,7 +4,6 @@ var clientes = apiClientes.clientes.usuarios
 
 const getUsuarios = (id) =>{
     let status = false
-<<<<<<< HEAD
     let usuariosJSON = {}
 
 
@@ -13,14 +12,6 @@ const getUsuarios = (id) =>{
             usuariosJSON.usuarios = cliente
         }
 
-=======
-    const usuariosJSON = {}
-
-    clientes.id.forEach(function(cliente){
-        console.log(cliente);
-        const nome = cliente
-        usuariosJSON.lista_usuarios = nome
->>>>>>> 98270d4ba2a4a268366935694ce40f97debe93b1
         status = true
     })
 
