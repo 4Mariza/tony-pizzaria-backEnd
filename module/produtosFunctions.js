@@ -48,21 +48,21 @@ const getAllPizzas = () => {
     })
 
     if (status)
-        return {pizzasArray}
+        return { pizzasArray }
     else
         return false
 }
 
-const getProdutoCategoria = (idCategoria) =>{
+const getProdutoCategoria = (idCategoria) => {
     let status = false
     let produtosArray = []
-    
+
     produtos.forEach(produto => {
         // console.log(produto.categoria);
-        
-        produto.categoria.forEach(categoria =>{
+
+        produto.categoria.forEach(categoria => {
             let produtosJSON = {}
-            if(categoria.id == id){
+            if (categoria.id == id) {
                 produtosJSON.id = produto.id
                 produtosJSON.nome = produto.nome
                 produtosJSON.categorias = produto.categoria
@@ -72,23 +72,49 @@ const getProdutoCategoria = (idCategoria) =>{
                 produtosJSON.favorita = produto.favorita
                 produtosJSON.avaliacao = produto.avaliacao
                 produtosJSON.comentarios = produto.comentarios
-        
+
                 produtosArray.push(produtosJSON)
                 status = true
             }
         })
 
-        
+
     })
 
-    if(status)
-        return {produtosArray}
-    else    
+    if (status)
+        return { produtosArray }
+    else
         return false
 
 }
 
-const getFavoritos = () =>{
+const getFavoritos = () => {
+    let status = false
+
+    let favoritasArray = []
+
+    produtos.forEach(pizza => {
+        let favoritasJSON = {}
+        if (pizza.favorita == true) {
+            favoritasJSON.id = pizza.id
+            favoritasJSON.nome = pizza.nome
+            favoritasJSON.categorias = pizza.categoria
+            favoritasJSON.foto = pizza.foto
+            favoritasJSON.preco = pizza.preco
+            favoritasJSON.descricao = pizza.descricao
+            favoritasJSON.favorita = pizza.favorita
+            favoritasJSON.avaliacao = pizza.avaliacao
+            favoritasJSON.comentarios = pizza.comentarios
+
+            favoritasArray.push(favoritasJSON)
+            status = true
+        }
+    })
+
+    if (status)
+        return { favoritasArray }
+    else
+        return false
 }
 
 const getComentarios = (idProduto) => {
@@ -98,46 +124,56 @@ const getComentarios = (idProduto) => {
     let comentariosArray = []
     let comentarios = {}
 
-    produtos.forEach(produto =>{
+    produtos.forEach(produto => {
 
-        if(produto.id == idProduto){
-            
-            produto.comentarios.forEach(comentario =>{
+        if (produto.id == idProduto) {
+
+            produto.comentarios.forEach(comentario => {
 
                 let comentarioJSON = {}
-                    comentarioJSON.id = comentario.id
-                    comentarioJSON.titulo = comentario.titulo
-                    comentarioJSON.data = comentario.data
-                    comentarioJSON.avaliacao = comentario.avaliacao
-                    comentarioJSON.comentario = comentario.comentario
-                    
-                    usuarios.forEach(usuario =>{
-                        if(comentario.id_usuario == usuario.id){
-                            comentarioJSON.foto = usuario.foto
-                            comentarioJSON.usuario = usuario.nome
+                comentarioJSON.id = comentario.id
+                comentarioJSON.titulo = comentario.titulo
+                comentarioJSON.data = comentario.data
+                comentarioJSON.avaliacao = comentario.avaliacao
+                comentarioJSON.comentario = comentario.comentario
 
-                        }
-                    })
-                    
-                    comentariosArray.push(comentarioJSON)
+                usuarios.forEach(usuario => {
+                    if (comentario.id_usuario == usuario.id) {
+                        comentarioJSON.foto = usuario.foto
+                        comentarioJSON.usuario = usuario.nome
+
+                    }
                     status = true
+                })
+
+                comentariosArray.push(comentarioJSON)
 
             })
 
-            comentarios.comentarios = comentariosArray
-            comentarios.quantidade = comentariosArray.length
-            comentarios.status = status
         }
-
-        if (status)
-            return comentarios
-        else
-            return false
+        
     })
+    comentarios.comentarios = comentariosArray
+    comentarios.quantidade = comentariosArray.length
+    comentarios.status = status
+
+    if (status)
+    return comentarios
+    else
+    return false
 }
 
 
 // console.log(getAllPizzas())
 // console.log(getCategoria())
 // console.log(getProdutoCategoria(6))
-console.log(getComentarios(1))
+// console.log(getComentarios(1))
+// console.log(getFavoritos())
+
+module.exports = {
+    getAllPizzas,
+    getCategoria,
+    getComentarios,
+    getFavoritos,
+    getProdutoCategoria
+}

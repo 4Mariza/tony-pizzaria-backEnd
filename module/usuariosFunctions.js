@@ -21,4 +21,27 @@ const getUsuarios = (id) =>{
         return false
 }
 
-// console.log(getUsuarios(1))
+const getListaUsuarios = () =>{
+    let status = false
+    let usuariosJSON = {}
+
+
+    clientes.forEach(function(cliente){
+            usuariosJSON.usuarios = cliente
+
+        status = true
+    })
+
+    if (status) 
+        return usuariosJSON
+    else
+        return false
+}
+
+
+// console.log(getUsuarios())
+console.log(getListaUsuarios())
+
+module.exports={
+    getUsuarios
+}
