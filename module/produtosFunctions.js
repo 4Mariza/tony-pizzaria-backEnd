@@ -33,7 +33,7 @@ const getAllPizzas = () => {
         let pizzasJSON = {}
         if (pizza.categoria.includes(categorias[0])) {
             pizzasJSON.id = pizza.id
-            pizzasJSON.nome = pizza.pizza
+            pizzasJSON.nome = pizza.nome
             pizzasJSON.categorias = pizza.categoria
             pizzasJSON.foto = pizza.foto
             pizzasJSON.preco = pizza.preco
@@ -53,6 +53,22 @@ const getAllPizzas = () => {
         return false
 }
 
+const getPizzas = () => {
+    let status = false
+    let pizzasLista = []
+
+    produtos.forEach(pizza =>{
+        if(pizza.categoria.includes(categorias[0]))
+            pizzasLista.push(pizza.nome)
+        status = true
+    })
+
+    if(status)
+        return {pizzasLista}
+    else
+        return false
+}
+
 const getProdutoCategoria = (idCategoria) => {
     let status = false
     let produtosArray = []
@@ -62,7 +78,7 @@ const getProdutoCategoria = (idCategoria) => {
 
         produto.categoria.forEach(categoria => {
             let produtosJSON = {}
-            if (categoria.id == id) {
+            if (categoria.id == idCategoria) {
                 produtosJSON.id = produto.id
                 produtosJSON.nome = produto.nome
                 produtosJSON.categorias = produto.categoria
@@ -84,6 +100,29 @@ const getProdutoCategoria = (idCategoria) => {
     if (status)
         return { produtosArray }
     else
+        return false
+
+}
+
+const listarProdutosCategoria = (idCategoria) => {
+    let status = false
+    let produtosLista = []
+    
+    let produtosJSON = {}
+    produtos.forEach(produto =>{
+        produto.categoria.forEach(categoria =>{
+            if(categoria.id == idCategoria){
+                produtosJSON.categoria = categoria.nome
+                produtosLista.push(produto.nome)
+            }
+            status = true
+        })
+        produtosJSON.produtos = produtosLista
+        
+    })
+    if (status)
+        return produtosJSON
+    else 
         return false
 
 }
@@ -165,6 +204,8 @@ const getComentarios = (idProduto) => {
 
 
 // console.log(getAllPizzas())
+console.log(listarProdutosCategoria(5))
+// console.log(getPizzas())
 // console.log(getCategoria())
 // console.log(getProdutoCategoria(6))
 // console.log(getComentarios(1))
@@ -172,7 +213,9 @@ const getComentarios = (idProduto) => {
 
 module.exports = {
     getAllPizzas,
+    getPizzas,
     getCategoria,
+    listarProdutosCategoria,
     getComentarios,
     getFavoritos,
     getProdutoCategoria
