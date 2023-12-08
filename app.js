@@ -11,7 +11,6 @@ const cors = require('cors')
 const {request} = require('http')
 
 const app = express()
-const users = []
 
 app.use((request, response, next) =>{
     response.header('Access-Control-Allow-Origin', '*')
@@ -35,6 +34,19 @@ app.get('/usuarios/info/:id', cors(), async function(request, response,next){
     } else {
         response.status(404)
         response.json({erro:'Item não encontrado'})
+    }
+})
+
+app.get('/usuarios', cors(), async function(request, response, next){
+    let controleDadosUsuarios = require('./module/usuariosFunctions')
+    let usuarios = controleDadosUsuarios.getListaUsuarios()
+
+    if(usuarios){
+        response.json(usuarios)
+        response.status(200)
+    } else {
+        response.status(404)
+        response.json({erro: 'Item não encontrado.'})
     }
 })
 

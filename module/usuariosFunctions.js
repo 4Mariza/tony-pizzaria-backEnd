@@ -23,12 +23,12 @@ const getUsuarios = (id) =>{
 
 const getListaUsuarios = () =>{
     let status = false
+    let usuariosLista = []
     let usuariosJSON = {}
-
-
+    
     clientes.forEach(function(cliente){
-            usuariosJSON.usuarios = cliente
-
+            usuariosLista.push(cliente)
+            usuariosJSON.usuarios = usuariosLista
         status = true
     })
 
@@ -43,5 +43,6 @@ const getListaUsuarios = () =>{
 console.log(getListaUsuarios())
 
 module.exports={
-    getUsuarios
+    getUsuarios,
+    getListaUsuarios
 }
