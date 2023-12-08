@@ -11,6 +11,7 @@ const cors = require('cors')
 const {request} = require('http')
 
 const app = express()
+app.use(express.json())
 
 app.use((request, response, next) =>{
     response.header('Access-Control-Allow-Origin', '*')
@@ -21,7 +22,7 @@ app.use((request, response, next) =>{
     next()
 })
 
-app.get('/usuarios/info/:id', cors(), async function(request, response,next){
+app.get('/usuario/info/:id', cors(), async function(request, response,next){
     
     let idUsuario = request.params.id
 
@@ -47,6 +48,19 @@ app.get('/usuarios', cors(), async function(request, response, next){
     } else {
         response.status(404)
         response.json({erro: 'Item não encontrado.'})
+    }
+})
+
+app.post('/usuarios', cors(), async function(request, response, next) {
+    let controleCadastro = require('./module/usuariosFunctions')
+    let dadosCadastro = controleCadastro.cadastrarUsuario(request.body)
+
+    if(dadosCadastro){
+        response.json(dadosCadastro)
+        response.status(200)
+    } else {
+        response.status(404)
+        response.json({erro:'Não foi possível concluir o cadastro'})
     }
 })
 
