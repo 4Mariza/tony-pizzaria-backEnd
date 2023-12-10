@@ -57,11 +57,25 @@ app.post('/usuarios', cors(), async function(request, response, next) {
 
     if(dadosCadastro){
         response.json(dadosCadastro)
-        response.status(200)
+        response.status(201)
     } else {
-        response.status(404)
+        response.status(400)
         response.json({erro:'Não foi possível concluir o cadastro'})
     }
+})
+
+app.post('/login', cors(), async function(request, response, next){
+    let controleLogin = require('./module/usuariosFunctions')
+    let dadosLogin = controleLogin.login(request.body)
+
+    if(dadosLogin){
+        response.json(dadosLogin)
+        response.status(200)
+    }  else {
+        response.status(401)
+        response.json({erro:'Não autorizado.'})
+    }
+    
 })
 
 app.get('/pizzasInfo', cors(), async function(request, response, next){
