@@ -21,7 +21,7 @@ var produtos = {
                     categorias.categorias[0],
                     categorias.categorias[3]
                 ],
-                foto: '',
+                foto: '../img/pizza_calabresa_com_queijo.jpg',
                 preco: '16.00',
                 descricao: 'Hmm delicia',
                 favorita: true,
@@ -57,7 +57,7 @@ var produtos = {
                     categorias.categorias[0],
                     categorias.categorias[3]
                 ],
-                foto: '',
+                foto: '../img/pepperoni_com_queijo.jpg',
                 preco: '19.00',
                 descricao: 'Hmm delicia muito bom',
                 favorita: true,
@@ -93,7 +93,7 @@ var produtos = {
                     categorias.categorias[0],
                     categorias.categorias[3]
                 ],
-                foto: '',
+                foto: '../img/pizza calabresa.png',
                 preco: '16.00',
                 descricao: 'Hmm delicia muito bom que otima',
                 favorita: false,
@@ -129,7 +129,7 @@ var produtos = {
                     categorias.categorias[0],
                     categorias.categorias[3]
                 ],
-                foto: '',
+                foto: '../img/pepperoni_com_queijo_tomate.jpg',
                 preco: '17.00',
                 descricao: 'Hmmm',
                 favorita: false,
@@ -165,7 +165,7 @@ var produtos = {
                     categorias.categorias[0],
                     categorias.categorias[3]
                 ],
-                foto: '',
+                foto: '../img/brotinho_qjo_tomate.jpg',
                 preco: '12.00',
                 descricao: 'Hmmm',
                 favorita: false,
@@ -201,7 +201,7 @@ var produtos = {
                     categorias.categorias[0],
                     categorias.categorias[2]
                 ],
-                foto: '',
+                foto: '../img/palmito_qjo.png',
                 preco: '16.50',
                 descricao: 'Hmmm',
                 favorita: true,
@@ -237,7 +237,7 @@ var produtos = {
                     categorias.categorias[0],
                     categorias.categorias[2]
                 ],
-                foto: '',
+                foto: '../img/brocolis_palmito_azeitona.jpg',
                 preco: '18.50',
                 descricao: 'Hmmm',
                 favorita: false,
@@ -273,7 +273,7 @@ var produtos = {
                     categorias.categorias[0],
                     categorias.categorias[2]
                 ],
-                foto: '',
+                foto: '../img/pizza-margherita.jpg',
                 preco: '15.80',
                 descricao: 'Hmmm',
                 favorita: false,
@@ -309,7 +309,7 @@ var produtos = {
                     categorias.categorias[0],
                     categorias.categorias[2]
                 ],
-                foto: '',
+                foto: '../img/shimeji_queijo.webp',
                 preco: '18.80',
                 descricao: 'Hmmm',
                 favorita: true,
@@ -345,7 +345,7 @@ var produtos = {
                     categorias.categorias[0],
                     categorias.categorias[4]
                 ],
-                foto: '',
+                foto: '../img/morango_chocolate.webp',
                 preco: '13.00',
                 descricao: 'Hmmm',
                 favorita: true,
@@ -381,7 +381,7 @@ var produtos = {
                     categorias.categorias[0],
                     categorias.categorias[4]
                 ],
-                foto: '',
+                foto: '../img/brownie_pizza.jpg',
                 preco: '16.00',
                 descricao: 'Hmmm',
                 favorita: true,
@@ -417,7 +417,7 @@ var produtos = {
                     categorias.categorias[0],
                     categorias.categorias[4]
                 ],
-                foto: '',
+                foto: '../img/banoffe_pizza.jpg',
                 preco: '15.00',
                 descricao: 'Hmmm',
                 favorita: true,
