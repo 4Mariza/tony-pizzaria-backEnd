@@ -31,7 +31,7 @@ const getListaUsuarios = () => {
 
   if (status) return usuariosJSON;
   else return false;
-};
+}
 
 const cadastrarUsuario = (usuario) => {
   let status = false;
@@ -54,13 +54,11 @@ const cadastrarUsuario = (usuario) => {
 
   if (status) return novoUsuario;
   else return false;
-};
+}
 
 const login = (usuario) => {
   let status = false;
   let dados;
-
-  console.log(usuario);
 
   clientes.forEach((item) => {
     if (usuario.senha == item.senha && usuario.email == item.email) {
@@ -74,7 +72,7 @@ const login = (usuario) => {
 }
 
 // console.log(getUsuarios())
-//console.log(getListaUsuarios())
+// console.log(getListaUsuarios())
 
 module.exports = {
   getUsuarios,
