@@ -204,7 +204,7 @@ const getComentarios = (idProduto) => {
 
 
 // console.log(getAllPizzas())
-console.log(listarProdutosCategoria(5))
+// console.log(listarProdutosCategoria(5))
 // console.log(getPizzas())
 // console.log(getCategoria())
 // console.log(getProdutoCategoria(6))
