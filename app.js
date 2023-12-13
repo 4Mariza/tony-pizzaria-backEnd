@@ -117,12 +117,12 @@ app.get('/categorias', cors(), async function(request, response, next){
     }
 })
 
-app.get('/produto/categoria/:id', cors(), async function(request, response, next){
+app.get('/produto/categoria', cors(), async function(request, response, next){
 
-    let idCategoria = request.params.id
+    // let idCategoria = request.params.id
 
     let controle = require('./module/produtosFunctions')
-    let dados = controle.getProdutoCategoria(idCategoria)
+    let dados = controle.getProdutoCategoria(request.body)
 
     if(dados){
         response.json(dados)

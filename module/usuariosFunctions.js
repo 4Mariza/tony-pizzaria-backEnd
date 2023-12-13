@@ -3,40 +3,40 @@ var apiClientes = require("./apiClient");
 var clientes = apiClientes.clientes.usuarios;
 
 const getUsuarios = (id) => {
-  let status = false;
-  let usuariosJSON = {};
+  let status = false
+  let usuariosJSON = {}
 
   clientes.forEach(function (cliente) {
     if (id == cliente.id) {
-      usuariosJSON.usuarios = cliente;
+      usuariosJSON.usuarios = cliente
     }
 
-    status = true;
-  });
+    status = true
+  })
 
-  if (status) return usuariosJSON;
-  else return false;
-};
+  if (status) return usuariosJSON
+  else return false
+}
 
 const getListaUsuarios = () => {
-  let status = false;
-  let usuariosLista = [];
-  let usuariosJSON = {};
+  let status = false
+  let usuariosLista = []
+  let usuariosJSON = {}
 
   clientes.forEach(function (cliente) {
-    usuariosLista.push(cliente);
-    usuariosJSON.usuarios = usuariosLista;
-    status = true;
-  });
+    usuariosLista.push(cliente)
+    usuariosJSON.usuarios = usuariosLista
+    status = true
+  })
 
-  if (status) return usuariosJSON;
-  else return false;
+  if (status) return usuariosJSON
+  else return false
 }
 
 const cadastrarUsuario = (usuario) => {
-  let status = false;
-  let novoUsuario;
-  console.log(usuario);
+  let status = false
+  let novoUsuario
+  console.log(usuario)
   if (
     usuario.nome != "" &&
     usuario.email != "" &&
@@ -46,29 +46,29 @@ const cadastrarUsuario = (usuario) => {
     novoUsuario = {
       id: clientes[clientes.length - 1].id + 1,
       ...usuario,
-    };
-    clientes.push(novoUsuario);
+    }
+    clientes.push(novoUsuario)
 
-    status = true;
+    status = true
   }
 
-  if (status) return novoUsuario;
-  else return false;
+  if (status) return novoUsuario
+  else return false
 }
 
 const login = (usuario) => {
-  let status = false;
-  let dados;
+  let status = false
+  let dados
 
   clientes.forEach((item) => {
     if (usuario.senha == item.senha && usuario.email == item.email) {
-      status = true;
-      dados = item;
+      status = true
+      dados = item
     }
-  });
+  })
 
-  if (status) return dados;
-  else return false;
+  if (status) return dados
+  else return false
 }
 
 // console.log(getUsuarios())
@@ -79,4 +79,4 @@ module.exports = {
   getListaUsuarios,
   cadastrarUsuario,
   login
-};
+}
