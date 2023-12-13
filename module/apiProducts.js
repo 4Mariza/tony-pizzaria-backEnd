@@ -483,7 +483,7 @@ var produtos = {
                     categorias.categorias[1]
                 ],
                 tamanho: '2L',
-                foto: '',
+                foto: '../img/coca.png',
                 descricao: 'Refrigerante Garrafa 2l Embalagem Econômica',
                 preco: 14.99
             },
@@ -494,7 +494,7 @@ var produtos = {
                     categorias.categorias[1]
                 ],
                 tamanho: '600ml',
-                foto: '',
+                foto: '../img/cerveja.png',
                 descricao: 'Refrigerante Garrafa 2l Embalagem Econômica',
                 preco: 17.99
             },
@@ -505,7 +505,7 @@ var produtos = {
                     categorias.categorias[1]
                 ],
                 tamanho: '290ml',
-                foto: '',
+                foto: '../img/del_valle_uva.webp',
                 descricao: 'Suco Lata 290ml sabor Uva',
                 preco: 8.99
             },
@@ -516,7 +516,7 @@ var produtos = {
                     categorias.categorias[1]
                 ],
                 tamanho: '300ml',
-                foto: '',
+                foto: '../img/cha_gelado.webp',
                 descricao: 'Iced Tea Garrafa Leao Zero sabor Pêssego ',
                 preco: 10.99
             },
@@ -527,7 +527,7 @@ var produtos = {
                     categorias.categorias[1]
                 ],
                 tamanho: '350ml',
-                foto: '',
+                foto: '../img/sprite_lata.jpg',
                 descricao: 'Refrigerante Lata 350ml',
                 preco: 9.99
             }

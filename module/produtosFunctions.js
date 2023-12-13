@@ -202,6 +202,23 @@ const getComentarios = (idProduto) => {
     return false
 }
 
+const getBebidas = () => {
+    let status = false 
+    let bebidas = []
+
+    produtos.forEach(item =>{
+        if(item.categoria.includes(categorias[1])){
+            bebidas.push(item)
+            status = true
+        }
+    })
+
+    if(status)
+        return {bebidas}
+    else
+        return false
+}
+
 
 // console.log(getAllPizzas())
 // console.log(listarProdutosCategoria(5))
@@ -210,6 +227,7 @@ const getComentarios = (idProduto) => {
 // console.log(getProdutoCategoria(6))
 // console.log(getComentarios(1))
 // console.log(getFavoritos())
+console.log(getBebidas());
 
 module.exports = {
     getAllPizzas,
@@ -218,5 +236,6 @@ module.exports = {
     listarProdutosCategoria,
     getComentarios,
     getFavoritos,
-    getProdutoCategoria
+    getProdutoCategoria,
+    getBebidas
 }

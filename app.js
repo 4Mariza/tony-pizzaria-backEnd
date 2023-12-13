@@ -164,6 +164,18 @@ app.get('/comentarios/produto/:id', cors(), async function(request,response, nex
     }
 })
 
+app.get('/bebidas', cors(), async function(request,response, next){
+    let controleBebidas = require('./module/produtosFunctions')
+    let bebidas = controleBebidas.getBebidas()
+
+    if(bebidas){
+        response.json(bebidas)
+        response.status(200)
+    } else {
+        response.status(404)
+        response.json({erro:'Item não encontrado'})
+    }
+})
 
 app.listen('8080', function(){
     console.log('API funcionando!')

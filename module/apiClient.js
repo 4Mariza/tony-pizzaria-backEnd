@@ -8,7 +8,7 @@ var clientes = {
                 email: 'fulano.silva@email.com.br',
                 telefone: '(11)95555-5555',
                 localizacao: 'Rua Perto de Algum Lugar, Jardim Xurupita, Brasil',
-                foto: '../img/Ellipse 1.png',
+                foto: '../img/fulano_silva.png',
                 senha: '12345678'
             },
             {
@@ -17,7 +17,7 @@ var clientes = {
                 email: 'maria.silva@email.com.br',
                 telefone: '(11)92222-2222',
                 localizacao: 'Rua Perto, Jardim Luz, Brasil',
-                foto: '../img/Ellipse 7.png',
+                foto: '../img/maria_silva.avif',
                 senha: '00008888'
             },
             {
@@ -26,7 +26,7 @@ var clientes = {
                 email: 'pedro.gDias@email.com',
                 telefone: '(11)91111-1111',
                 localizacao: 'Rua Longe, Avenida Brasil, Brasil',
-                foto: '../img/Ellipse 8.png',
+                foto: '../img/Ellipse 1.png',
                 senha: '987654321'
             },
             {
@@ -35,7 +35,7 @@ var clientes = {
                 email: 'dama.al2@gmail.com',
                 telefone: '(11)93333-3333',
                 localizacao: 'Rua Estrela, Jardim Florido, Brasil',
-                foto: '',
+                foto: '../img/dama_almeida.webp',
                 senha: 'moremore'
             }
         ]
